@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+    
+
+    
+<body>
+    <div class="container"><h1>🤖 AI Text Classifier</h1>
+
+<p class="subtitle">
+    Enter any text and classify it using Machine Learning
+</p>
+
+<form method="POST">
+
+    <textarea
+        name="text"
+        placeholder="Enter your text here..."
+        required></textarea>
+
+    <button type="submit">
+        Classify Text
+    </button>
+
+</form>
+
+{% if prediction %}
+<div class="features">
+
+    <div class="card">
+        <h3>⚡ Fast Prediction</h3>
+        <p>Instant text classification using ML.</p>
+    </div>
+
+    <div class="card">
+        <h3>🧠 AI Model</h3>
+        <p>TF-IDF + Naive Bayes powered system.</p>
+    </div>
+
+    <div class="card">
+        <h3>📊 Categories</h3>
+        <p>Classifies text into multiple domains.</p>
+    </div>
+
+</div>
+
+<div class="result">
+
+    <h3>Prediction Result</h3>
+
+    <div class="prediction">
+        {{ prediction }}
+    </div>
+
+</div>
+
+{% endif %}
+
+</div></body>
+</html>
